@@ -1,12 +1,16 @@
--- Global Event registration goes here...
+local events = require "events"
 
--- eg. :
-  
---script.on_event(defines.events.on_built_entity, events.on_built)
---script.on_event(defines.events.on_robot_built_entity, events.on_robot_built)
+script.on_init(function()
+    global.craftingcombinators = global.craftingcombinators or {}
+end)
 
---script.on_event(defines.events.on_pre_player_mined_item, events.on_destroyed)
---script.on_event(defines.events.on_robot_pre_mined, events.on_destroyed)
---script.on_event(defines.events.on_entity_died, events.on_destroyed)
+script.on_event(defines.events.on_built_entity, events.entityBuilt)
+script.on_event(defines.events.on_robot_built_entity, events.entityRobotBuilt)
 
---script.on_event(defines.events.on_tick, events.on_tick)
+script.on_event(defines.events.on_gui_opened, events.guiOpened)
+script.on_event(defines.events.on_gui_closed, events.guiClosed)
+script.on_event(defines.events.on_gui_click, events.guiClicked)
+script.on_event(defines.events.on_player_selected_area, events.areaSelected)
+script.on_event(defines.events.on_player_alt_selected_area, events.areaSelected)
+script.on_event(defines.events.on_player_cursor_stack_changed , events.cursorStackChanged)
+script.on_event(defines.events.on_selected_entity_changed, events.entitySelected)

@@ -23,6 +23,23 @@ data:extend(
             order = "e[crafting-combinator]",
             place_result = config.CRAFTINGCOMBINATOR_NAME,
             stack_size = 50
+        },
+        {
+            type = "selection-tool",
+            name = config.CRAFTINGCOMBINATOR_NAME_SELECTION_TOOL,
+            icon = "__base__/graphics/icons/blueprint.png",
+            icon_size = 32,
+            flags = {"hidden"},
+            subgroup = "tool",
+            order = "e[crafting-combinator]",
+            stack_size = 1,
+            selection_mode = "buildable-type",
+            alt_selection_mode = "buildable-type",
+            selection_cursor_box_type = "entity",
+            selection_color = { r=0, g=1, b=0, a=1 },
+            alt_selection_color = { r=0, g=1, b=0, a=1 },
+            selection_cursor_box_type = "not-allowed",
+            alt_selection_cursor_box_type = "not-allowed",
         }
     }
 )
